@@ -1,0 +1,62 @@
+<head>
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div id="qrcode" class="qrcode"></div>
+    <input class='inputText' type='text' onkeyup='makeCode(this);'/>
+    <button id="downloadButton">Download</button>
+</div>
+</body>
+<style>
+</style>
+<script type="text/javascript">
+    function makeCode(e) {
+        document.querySelector(".qrcode").innerHTML = '';
+        new QRCode(document.querySelector(".qrcode"), {
+            text: document.querySelectorAll(".inputText")[0].value,
+            width: 320,
+            height: 320,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
+        document.querySelectorAll('.qrcode')[0].style.border = '0 none';
+    }
+
+    function downloadDivAsImage() {
+        const canvas = document.querySelector('#qrcode canvas');
+
+        const link = document.createElement('a');
+        link.download = 'qr-code.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    }
+
+    document.getElementById('downloadButton').addEventListener('click', downloadDivAsImage);
+</script>
+<style>
+    body {
+        text-align: center;
+    }
+
+    .qrcode {
+        border: 1px solid black;
+        width: 320px;
+        height: 320px;
+        margin: auto;
+    }
+
+    .inputText, #downloadButton {
+        margin: 20px;
+        width: 320px;
+    }
+
+    .container {
+        margin: 40px auto auto;
+        width: 400px;
+        text-align: center;
+    }
+</style>
