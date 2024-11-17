@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.qrcode {
+    width: 320px;
+    height: 320px;
+    background: url('/images/placeholder.png');
+}
+
+button.hidden {
+    display: none;
+}
