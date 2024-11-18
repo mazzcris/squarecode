@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Generate Free QR Codes Instantly | SquareCode.me</title>
-    <meta name="descripition" content="Instantly generate customizable QR codes for free with SquareCode.me. Quick, simple, and no signup required. Perfect for personal and business use.">
+    <meta name="descripition"
+          content="Instantly generate customizable QR codes for free with SquareCode.me. Quick, simple, and no signup required. Perfect for personal and business use.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
@@ -21,7 +22,8 @@
                 <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                         <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Preview</p>
-                        <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Start typing, your code will appear here</p>
+                        <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Start typing, your code will
+                            appear here</p>
                     </div>
                     <div class="relative pb-4 w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
                         <div id="qrcode" class="qrcode mx-auto my-5"></div>
@@ -33,12 +35,26 @@
             <div class="relative lg:row-span-2">
                 <div class="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
                 <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-r-[calc(2rem+1px)]">
-                    <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
-                        <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Code content</p>
-                        <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Write your content or url for the QR code</p>
-                        <input id="inputText" onkeyup='makeCode(this);' name="inputText" type="text" class="min-w-100 w-full my-5 flex-auto rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm/6" placeholder="Enter your text or link">
-                        <button id="downloadButton" type="submit" class="flex-auto mx-auto float-right rounded-md bg-indigo-500 px-3.5 py-2.5 mb-5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Download</button>
-                        <button id="testLink" type="submit" class="hidden flex-auto mx-5 float-right rounded-md bg-green-500 mx-5 px-3.5 py-2.5 mb-5 text-sm font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Test link</button>
+                    <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10 flex-auto">
+                        <p class="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">Code
+                            content</p>
+                        <p class="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Write your content or url
+                            for the QR code</p>
+                        <input id="inputText" onkeyup='makeCode(this);' name="inputText" type="text"
+                               class="min-w-100 w-full my-5 flex-auto rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm/6"
+                               placeholder="Enter your text or link">
+                        <p class="mt-5 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">Pick a color</p>
+                        <input type="color" id="foregroundColor" value="#000000" oninput="makeCode(this)">
+                        <p class="my-5 max-w-lg text-sm/6 text-gray-600 max-lg:text-center flex-auto">
+                            <button id="downloadButton" type="submit"
+                                    class="align-middle flex-auto mx-auto float-right rounded-md bg-indigo-500 px-3.5 py-2.5 mb-5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                                Download
+                        <button id="testLink" type="submit"
+                                class="align-middle hidden flex-auto float-right rounded-md bg-green-500 mx-5 px-3.5 py-2.5 mb-5 text-sm font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                            Test link
+                            </button>
+                        </button>
+                        </p>
                     </div>
                 </div>
                 <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>

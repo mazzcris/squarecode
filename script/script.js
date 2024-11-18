@@ -3,12 +3,13 @@ const testLinkButton = document.getElementById('testLink');
 
 function makeCode(e) {
     const text = document.getElementById("inputText").value;
+    const color = document.getElementById('foregroundColor').value;
     document.querySelector(".qrcode").innerHTML = '';
     new QRCode(document.querySelector(".qrcode"), {
         text: text,
         width: 320,
         height: 320,
-        colorDark: "#000000",
+        colorDark: color,
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.H
     });
